@@ -9,12 +9,12 @@ export default async function migrations(request, response) {
       error: `Method ${request.method} Not Allowed`,
     });
   }
-  
+
   let dbClient;
 
   try {
     dbClient = await database.getNewClient();
-    
+
     const defaultMigrationOptions = {
       dbClient: dbClient,
       dryRun: true,
